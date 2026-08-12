@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  name: Default
 
 steps:
 - script: echo Hello, sourcelibscanner!
@@ -16,4 +16,4 @@ steps:
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     sourceandlibscanner -auto -bt none -f my.fpr -scan
-  displayName: 'Sourcelibscannertest'
+  displayName: 'Sourcelibscanner Test'
