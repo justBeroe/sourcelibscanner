@@ -10,10 +10,10 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- script: echo Hello, sourcelibscanner!
+  displayName: 'Run a one-line test BEROE script'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    sourceandlibscanner -auto -bt none -f my.fpr -scan
+  displayName: 'Sourcelibscannertest'
