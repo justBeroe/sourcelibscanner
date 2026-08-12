@@ -13,13 +13,29 @@ steps:
 - script: echo Hello, sourcelibscanner!
   displayName: 'Run a one-line test BEROE script'
 
-- script: |
-    echo Directory test, moving to npm project and RUN.
-    cd
-    cd C:\sonatype\12-ReactJS-Unit-Testing
-    npm config set registry http://127.0.0.1:1/
-    npm config set legacy-peer-deps true
-    npm config set strict-peer-deps false
-    npm config list
-    sourceandlibscanner -auto -bt none -f my.fpr -scan
+# - script: |
+#     echo Directory test, moving to npm project and RUN.
+#     cd
+#     cd C:\sonatype\12-ReactJS-Unit-Testing
+#     cd
+#     npm config set registry http://127.0.0.1:1/
+#     npm config set legacy-peer-deps true
+#     npm config set strict-peer-deps false
+#     npm config list
+#     sourceandlibscanner -auto -bt none -f my.fpr -scan
+#   displayName: 'Sourcelibscanner Test'
+
+- task: PowerShell@2
   displayName: 'Sourcelibscanner Test'
+  inputs:
+    targetType: 'inline'
+    script: |
+      echo Directory test, moving to npm project and RUN.
+      cd
+      cd C:\sonatype\12-ReactJS-Unit-Testing
+      cd
+      npm config set registry http://127.0.0.1:1/
+      npm config set legacy-peer-deps true
+      npm config set strict-peer-deps false
+      npm config list
+      sourceandlibscanner -auto -bt none -f my.fpr -scan
