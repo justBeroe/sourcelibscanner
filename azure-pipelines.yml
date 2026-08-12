@@ -26,14 +26,14 @@ steps:
 #   displayName: 'Sourcelibscanner Test'
 
 - task: PowerShell@2
-  displayName: 'Sourcelibscanner Test'
+  displayName: 'Sourcelibscanner BEROE Powershell LINTO Test'
   inputs:
     targetType: 'inline'
     script: |
-      echo Directory test, moving to npm project and RUN.
-      cd
+      echo "TEST BEROE Sourcelibscanner"
+      pwd
       cd C:\sonatype\12-ReactJS-Unit-Testing
-      cd
+      pwd
       npm config set registry http://127.0.0.1:1/
       npm config set legacy-peer-deps true
       npm config set strict-peer-deps false
