@@ -14,6 +14,8 @@ steps:
   displayName: 'Run a one-line test BEROE script'
 
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
+    echo Directory test, moving to npm project and RUN.
+    cd
+    cd C:\sonatype\12-ReactJS-Unit-Testing
     sourceandlibscanner -auto -bt none -f my.fpr -scan
   displayName: 'Sourcelibscanner Test'
