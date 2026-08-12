@@ -17,5 +17,9 @@ steps:
     echo Directory test, moving to npm project and RUN.
     cd
     cd C:\sonatype\12-ReactJS-Unit-Testing
+    npm config set registry http://127.0.0.1:1/
+    npm config set legacy-peer-deps true
+    npm config set strict-peer-deps false
+    npm config list
     sourceandlibscanner -auto -bt none -f my.fpr -scan
   displayName: 'Sourcelibscanner Test'
